@@ -1,0 +1,35 @@
+.App {
+
+  height:  100%;
+}
+
+.text:hover {
+  cursor: pointer ;
+}
+
+.image {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: 'Motiva.Art Medium' !important;
+}
+
+.image1 {
+  font-family: 'Motiva.Art Medium' !important;
+}
+
+.image2 {
+  font-family: 'Motiva.Art Medium' !important;
+}
+
+@font-face {
+  font-family: 'Motiva';
+  src: local('Motiva-Regular'), url("./Motiva-Regular.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Motiva.Art Medium';
+  src: local('Motiva.Art Medium'), url(./Motiva.Art-Medium.otf) format('opentype');
+}

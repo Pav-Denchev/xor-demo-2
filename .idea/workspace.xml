@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f820e553-4860-43b6-8e1a-14a952d5e49f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2KPUquk0HDNumGnlcICGFd3Tqfz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nir\IdeaProjects\motiva-color-test\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nir\IdeaProjects\motiva-color-test\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f820e553-4860-43b6-8e1a-14a952d5e49f" name="Default Changelist" comment="" />
+      <created>1673875905967</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673875905967</updated>
+      <workItem from="1673875908835" duration="9167000" />
+      <workItem from="1673944060693" duration="14006000" />
+      <workItem from="1674397012031" duration="42750000" />
+      <workItem from="1674994590141" duration="1365000" />
+      <workItem from="1676538020577" duration="8462000" />
+    </task>
+    <task id="LOCAL-00001" summary="created test for colors">
+      <created>1673887630985</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673887630985</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Image">
+      <created>1674409894336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674409894336</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Image resize">
+      <created>1674466176522</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674466176522</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Image resize">
+      <created>1674467104939</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674467104939</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added dark color picker">
+      <created>1674471814803</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674471814803</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed a bug with wrong Image proportions">
+      <created>1674479718019</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674479718019</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed a bug with wrong Image proportions">
+      <created>1674480149338</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674480149338</updated>
+    </task>
+    <task id="LOCAL-00008" summary="changed font color behavour so that font can be either whit or black depending on the target brightness">
+      <created>1674547456127</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674547456127</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added average contrast of text vs image">
+      <created>1674553302363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674553302363</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added:&#10;- Motiva Font&#10;- Margins&#10;- customize light color">
+      <created>1676544355324</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676544355324</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created test for colors" />
+    <MESSAGE value="Added Image" />
+    <MESSAGE value="Added Image resize" />
+    <MESSAGE value="Added dark color picker" />
+    <MESSAGE value="Fixed a bug with wrong Image proportions" />
+    <MESSAGE value="changed font color behavour so that font can be either whit or black depending on the target brightness" />
+    <MESSAGE value="Added average contrast of text vs image" />
+    <MESSAGE value="Added:&#10;- Motiva Font&#10;- Margins&#10;- customize light color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added:&#10;- Motiva Font&#10;- Margins&#10;- customize light color" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1368" y="-142" key="#ESLint" timestamp="1673876178871">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="-142" key="#ESLint/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1673876178871" />
+    <state x="-1506" y="-145" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1674396802270">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="-145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396802270" />
+    <state x="-1340" y="-206" key="CommitChangelistDialog2" timestamp="1676544354794">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1340" y="-206" key="CommitChangelistDialog2/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1676544354794" />
+    <state x="-1102" y="93" key="Github.ShareDialog" timestamp="1673887421688">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1102" y="93" key="Github.ShareDialog/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1673887421688" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1676538151646">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1676538151646" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1676538151646">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1676538151646" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1676538151646">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1676538151646" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1676538151646">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1676538151646" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1674396938693">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938693" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.2.center" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.2.left" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.2.right" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.3.bottom" timestamp="1674396938695">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.3.bottom/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938695" />
+    <state width="1877" height="348" key="GridCell.Tab.3.center" timestamp="1674396938695">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.3.center/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938695" />
+    <state width="1877" height="348" key="GridCell.Tab.3.left" timestamp="1674396938694">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.3.left/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938694" />
+    <state width="1877" height="348" key="GridCell.Tab.3.right" timestamp="1674396938695">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.3.right/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674396938695" />
+    <state x="-1204" y="-89" key="RollbackChangesDialog" timestamp="1674405889057">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1204" y="-89" key="RollbackChangesDialog/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674405889057" />
+    <state x="-1368" y="-67" key="Vcs.Push.Dialog.v2" timestamp="1676544357478">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="-67" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1676544357478" />
+    <state x="-1264" y="-68" width="607" height="536" key="find.popup" timestamp="1674465337639">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1264" y="-68" width="607" height="536" key="find.popup/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1674465337639" />
+    <state x="-1304" y="80" key="run.anything.popup" timestamp="1673878984914">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="80" key="run.anything.popup/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1673878984914" />
+    <state x="-1297" y="-95" width="672" height="678" key="search.everywhere.popup" timestamp="1673885750697">
+      <screen x="-1920" y="-320" width="1920" height="1040" />
+    </state>
+    <state x="-1297" y="-95" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/-1920.-320.1920.1040@-1920.-320.1920.1040" timestamp="1673885750697" />
+  </component>
+</project>

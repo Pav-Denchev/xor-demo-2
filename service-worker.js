@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/xor-demo-2/precache-manifest.6fdc6bae788214dd62238ed5936771ae.js"
+  "/xor-demo-2/precache-manifest.c992cad47c3696fbb94a472cc7b39783.js"
 );
 
 workbox.clientsClaim();

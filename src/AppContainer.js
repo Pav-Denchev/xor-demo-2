@@ -21,8 +21,8 @@ export class AppContainer extends React.Component {
             opacity: 1,
             opacityInputValue: 100,
             color: { hex: '#000000', rgb: { r: 0, g: 0, b: 0 } },
-            minPixelsBelowThreshold: 1,
             blockedCells: 0,
+            rangeThreshold: 0
         };
     }
 
@@ -72,43 +72,17 @@ export class AppContainer extends React.Component {
         return 0.2126 * r + 0.7152 * g + 0.0722 * b;
     };
 
-    calcDarkPixel = (pixel, pixel1, pixel2) => {
-        const absR = Math.abs(Math.abs(pixel.r - pixel1.r) - pixel2.r);
-        const absG = Math.abs(Math.abs(pixel.g - pixel1.g) - pixel2.g);
-        const absB = Math.abs(Math.abs(pixel.b - pixel1.b) - pixel2.b);
-
-        return {
-            r: absR,
-            g: absG,
-            b: absB
-        };
-    };
-
-    calcBrightPixel = (darkPixel, pixel3) => {
-        const brightPixelR = Math.abs(darkPixel - pixel3.r);
-        const brightPixelG = Math.abs(darkPixel - pixel3.g);
-        const brightPixelB = Math.abs(darkPixel - pixel3.b);
-
-        return {
-            r: brightPixelR,
-            g: brightPixelG,
-            b: brightPixelB
-        };
-    };
-
     blockCellsBelowThreshold = async () => {
         return new Promise(async (resolve, reject) => {
-            const imageHtml = document.querySelector(".image");
-            const image1Html = document.querySelector(".image1");
-            const image2Html = document.querySelector(".image2");
-            const image3Html = document.querySelector(".image3");
+            const originalImageHtml = document.querySelector(".originalImage");
+            const whiteBackgroundImageHtml = document.querySelector(".whiteBackgroundImage");
+            const blackBackgroundImageHtml = document.querySelector(".blackBackgroundImage");
 
-            const imageBase64 = await htmlToImage.toPng(imageHtml, { quality: 1 });
-            const image1Base64 = await htmlToImage.toPng(image1Html, { quality: 1 });
-            const image2Base64 = await htmlToImage.toPng(image2Html, { quality: 1 });
-            const image3Base64 = await htmlToImage.toPng(image3Html, { quality: 1 });
+            const originalImageBase64 = await htmlToImage.toPng(originalImageHtml, { quality: 1 });
+            const whiteBackgroundImageBase64 = await htmlToImage.toPng(whiteBackgroundImageHtml, { quality: 1 });
+            const blackBackgroundImageBase64 = await htmlToImage.toPng(blackBackgroundImageHtml, { quality: 1 });
 
-            const imageUrls = [imageBase64, image1Base64, image2Base64, image3Base64];
+            const imageUrls = [originalImageBase64, whiteBackgroundImageBase64, blackBackgroundImageBase64];
 
             Promise.all(imageUrls.map(e =>
                 new Promise((resolve, reject) => {
@@ -118,19 +92,11 @@ export class AppContainer extends React.Component {
                     img.src = e;
                 })
             )).then((result) => {
-                const image = result[0];
-                const image1 = result[1];
-                const image2 = result[2];
-                const image3 = result[3];
+                const originalImage = result[0];
+                const whiteBackgroundImage = result[2];
                 let newLetters = new Array(24);
                 for (var h = 0; h < newLetters.length; h++) {
                     newLetters[h] = new Array(24);
-                }
-                let minPixelsBelowThreshold;
-                if (!this.state.minPixelsBelowThreshold) {
-                    minPixelsBelowThreshold = 1;
-                } else {
-                    minPixelsBelowThreshold = this.state.minPixelsBelowThreshold;
                 }
                 const height = 650;
                 const width = 500;
@@ -138,37 +104,23 @@ export class AppContainer extends React.Component {
                 const cellPxHeight = (height - (padding * 2)) / 24;
                 const cellPxWidth = (width - (padding * 2)) / 24;
 
-                const canvas = document.createElement('canvas');
-                const canvas1 = document.createElement('canvas');
-                const canvas2 = document.createElement('canvas');
-                const canvas3 = document.createElement('canvas');
+                const originalCanvas = document.createElement('canvas');
+                const whiteBackgroundCanvas = document.createElement('canvas');
 
-                canvas.width = width;
-                canvas.height = height;
+                originalCanvas.width = width;
+                originalCanvas.height = height;
 
-                canvas1.width = width;
-                canvas1.height = height;
+                whiteBackgroundCanvas.width = width;
+                whiteBackgroundCanvas.height = height;
 
-                canvas2.width = width;
-                canvas2.height = height;
+                const originalContext = originalCanvas.getContext('2d');
+                const whiteBackgroundContext = whiteBackgroundCanvas.getContext('2d');
 
-                canvas3.width = width;
-                canvas3.height = height;
+                originalContext.drawImage(originalImage, 0, 0, width, height);
+                whiteBackgroundContext.drawImage(whiteBackgroundImage, 0, 0, width, height);
 
-                const context = canvas.getContext('2d');
-                const context1 = canvas1.getContext('2d');
-                const context2 = canvas2.getContext('2d');
-                const context3 = canvas3.getContext('2d');
-
-                context.drawImage(image, 0, 0, width, height);
-                context1.drawImage(image1, 0, 0, width, height);
-                context2.drawImage(image2, 0, 0, width, height);
-                context3.drawImage(image3, 0, 0, width, height);
-
-                const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-                const imageData1 = context1.getImageData(0, 0, canvas1.width, canvas1.height);
-                const imageData2 = context2.getImageData(0, 0, canvas2.width, canvas2.height);
-                const imageData3 = context3.getImageData(0, 0, canvas3.width, canvas3.height);
+                const originalImageData = originalContext.getImageData(0, 0, originalCanvas.width, originalCanvas.height);
+                const whiteBackgroundImageData = whiteBackgroundContext.getImageData(0, 0, whiteBackgroundCanvas.width, whiteBackgroundCanvas.height);
 
                 let currRowPxCount = padding;
                 let currColPxCount = padding;
@@ -177,47 +129,28 @@ export class AppContainer extends React.Component {
                 for (let row = 0; row < 24; row++) {
                     for (let col = 0; col < 24; col++) {
                         let belowThreshold = false;
-                        let pixelsBelowThreshold = 0;
-                        let darkestPixel = {
-                            row,
-                            col,
-                            x: currRowPxCount,
-                            y: currColPxCount,
-                            grayscale: 255,
-                        };
+                        let darkestPixel = 255;
+                        let brightestPixel = 0;
                         for (let m = 0; m < Math.round(cellPxWidth); m++) {
                             for (let n = 0; n < Math.round(cellPxHeight); n++) {
-                                const pixel2 = this.getPx(imageData2, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
+                                const blackPixel = this.getPx(whiteBackgroundImageData, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
 
-                                if ((pixel2.r !== 0 && pixel2.g !== 0 && pixel2.b !== 0) && (pixel2.r !== 255 && pixel2.g !== 255 && pixel2.b !== 255)) {
+                                if ((blackPixel.r !== 0 && blackPixel.g !== 0 && blackPixel.b !== 0) && (blackPixel.r !== 255 && blackPixel.g !== 255 && blackPixel.b !== 255)) {
                                     continue;
                                 }
 
-                                const pixel = this.getPx(imageData, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
-                                const pixel1 = this.getPx(imageData1, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
-                                const pixel3 = this.getPx(imageData3, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
+                                const originalPixel = this.getPx(originalImageData, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
+                                const grayscale = this.rgbToGrayscale(originalPixel.r, originalPixel.g, originalPixel.b);
 
-                                const absPixel = this.calcDarkPixel(pixel, pixel1, pixel2, pixel3);
+                                if (grayscale < darkestPixel) {
+                                    darkestPixel = grayscale;
+                                }
 
-                                const brightPixel = this.calcBrightPixel(absPixel, pixel3);
-
-                                const grayscale = this.rgbToGrayscale(absPixel.r, absPixel.g, absPixel.b);
-
-                                if (grayscale < darkestPixel.grayscale) {
-                                    darkestPixel = {
-                                        row,
-                                        col,
-                                        x: currRowPxCount + m,
-                                        y: currColPxCount + n,
-                                        grayscale
-                                    }
+                                if (grayscale > brightestPixel) {
+                                    brightestPixel = grayscale;
                                 }
 
                                 if (grayscale <= parseFloat(this.state.threshold)) {
-                                    pixelsBelowThreshold++;
-                                }
-
-                                if (pixelsBelowThreshold >= minPixelsBelowThreshold) {
                                     belowThreshold = true;
                                     newLetters[row][col] = '~';
                                     blockedCells++;
@@ -230,7 +163,10 @@ export class AppContainer extends React.Component {
                                 break;
                             }
                         }
-                        console.log(darkestPixel);
+                        if (!belowThreshold && (brightestPixel - darkestPixel >= this.state.rangeThreshold)) {
+                            newLetters[row][col] = '#';
+                            blockedCells++;
+                        }
                         currRowPxCount += cellPxWidth;
                     }
                     currRowPxCount = padding;
@@ -321,7 +257,7 @@ export class AppContainer extends React.Component {
                     Blocked cells {this.state.blockedCells}
                 </div>
                 <div style={{ display: 'flex' }}>
-                    <div className='image' style={{ width: '500px', height: '650px', position: 'relative' }}>
+                    <div className='originalImage' style={{ width: '500px', height: '650px', position: 'relative' }}>
                         <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
                             <img alt={""} style={{ width: '500px', height: '650px' }} src={this.state.backgroundImage} />
                         </div>
@@ -331,27 +267,10 @@ export class AppContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className='image1' style={{ width: '500px', height: '650px', position: 'relative', display: `${this.state.loading ? 'block' : 'none'}` }}>
-                        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
-                            <img alt={""} style={{ width: '500px', height: '650px' }} src={this.state.backgroundImage} />
-                        </div>
+                    <div className='whiteBackgroundImage' style={{ width: '500px', height: '650px', position: 'relative', backgroundColor: 'white', display: `${this.state.loading ? 'block' : 'none'}` }}>
                         <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
                             <div style={{ width: '100%', height: '100%' }}>
                                 <TextLayer letters={this.state.letters} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='image2' style={{ width: '500px', height: '650px', position: 'relative', backgroundColor: 'white', display: `${this.state.loading ? 'block' : 'none'}` }}>
-                        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
-                            <div style={{ width: '100%', height: '100%' }}>
-                                <TextLayer letters={this.state.letters} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='image3' style={{ width: '500px', height: '650px', position: 'relative', backgroundColor: 'black', display: `${this.state.loading ? 'block' : 'none'}` }}>
-                        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
-                            <div style={{ width: '100%', height: '100%' }}>
-                                <TextLayer letters={this.state.letters} color={'#ffffff'} />
                             </div>
                         </div>
                     </div>
@@ -390,6 +309,19 @@ export class AppContainer extends React.Component {
                             onChange={(event) => {
                                 if (event.target.value >= 0 && event.target.value <= 255) {
                                     this.setState({ threshold: event.target.value });
+                                }
+                            }}
+                        />
+                        <TextField
+                            margin='normal'
+                            type="number"
+                            id="outlined-basic"
+                            label="Range Threshold (0 - 255)"
+                            variant="outlined"
+                            value={this.state.rangeThreshold}
+                            onChange={(event) => {
+                                if (event.target.value >= 0 && event.target.value <= 255) {
+                                    this.setState({ rangeThreshold: event.target.value });
                                 }
                             }}
                         />

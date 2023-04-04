@@ -161,7 +161,7 @@ export class AppContainer extends React.Component {
                                 break;
                             }
                         }
-                        if (!belowThreshold && (brightestPixel - darkestPixel >= this.state.rangeThreshold)) {
+                        if (!belowThreshold && (brightestPixel - darkestPixel >= parseFloat(this.state.rangeThreshold))) {
                             newLetters[row][col] = '#';
                             blockedCells++;
                         }

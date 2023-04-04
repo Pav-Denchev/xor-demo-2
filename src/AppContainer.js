@@ -133,7 +133,7 @@ export class AppContainer extends React.Component {
                             for (let n = 0; n < Math.round(cellPxHeight); n++) {
                                 const blackPixel = this.getPx(whiteBackgroundImageData, Math.round(currRowPxCount + m), Math.round(currColPxCount + n));
 
-                                if ((blackPixel.r !== 0 && blackPixel.g !== 0 && blackPixel.b !== 0) && (blackPixel.r !== 255 && blackPixel.g !== 255 && blackPixel.b !== 255)) {
+                                if (blackPixel.r !== 0 && blackPixel.g !== 0 && blackPixel.b !== 0) {
                                     continue;
                                 }
 

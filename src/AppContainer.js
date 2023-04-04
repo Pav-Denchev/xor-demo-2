@@ -77,8 +77,8 @@ export class AppContainer extends React.Component {
             const originalImageHtml = document.querySelector(".originalImage");
             const whiteBackgroundImageHtml = document.querySelector(".whiteBackgroundImage");
 
-            const originalImageBase64 = await htmlToImage.toPng(originalImageHtml, { quality: 1 });
-            const whiteBackgroundImageBase64 = await htmlToImage.toPng(whiteBackgroundImageHtml, { quality: 1 });
+            const originalImageBase64 = await htmlToImage.toPng(originalImageHtml, { quality: 1, pixelRatio: 1 });
+            const whiteBackgroundImageBase64 = await htmlToImage.toPng(whiteBackgroundImageHtml, { quality: 1, pixelRatio: 1 });
 
             const imageUrls = [originalImageBase64, whiteBackgroundImageBase64];
 
@@ -126,6 +126,7 @@ export class AppContainer extends React.Component {
 
                 for (let row = 0; row < 24; row++) {
                     for (let col = 0; col < 24; col++) {
+                        newLetters[row][col] = this.state.letters[row][col];
                         let belowThreshold = false;
                         let darkestPixel = 255;
                         let brightestPixel = 0;
@@ -153,8 +154,6 @@ export class AppContainer extends React.Component {
                                     newLetters[row][col] = '~';
                                     blockedCells++;
                                     break;
-                                } else {
-                                    newLetters[row][col] = this.state.letters[row][col];
                                 }
                             }
                             if (belowThreshold) {

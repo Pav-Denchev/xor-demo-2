@@ -76,13 +76,11 @@ export class AppContainer extends React.Component {
         return new Promise(async (resolve, reject) => {
             const originalImageHtml = document.querySelector(".originalImage");
             const whiteBackgroundImageHtml = document.querySelector(".whiteBackgroundImage");
-            const blackBackgroundImageHtml = document.querySelector(".blackBackgroundImage");
 
             const originalImageBase64 = await htmlToImage.toPng(originalImageHtml, { quality: 1 });
             const whiteBackgroundImageBase64 = await htmlToImage.toPng(whiteBackgroundImageHtml, { quality: 1 });
-            const blackBackgroundImageBase64 = await htmlToImage.toPng(blackBackgroundImageHtml, { quality: 1 });
 
-            const imageUrls = [originalImageBase64, whiteBackgroundImageBase64, blackBackgroundImageBase64];
+            const imageUrls = [originalImageBase64, whiteBackgroundImageBase64];
 
             Promise.all(imageUrls.map(e =>
                 new Promise((resolve, reject) => {
@@ -93,7 +91,7 @@ export class AppContainer extends React.Component {
                 })
             )).then((result) => {
                 const originalImage = result[0];
-                const whiteBackgroundImage = result[2];
+                const whiteBackgroundImage = result[1];
                 let newLetters = new Array(24);
                 for (var h = 0; h < newLetters.length; h++) {
                     newLetters[h] = new Array(24);
@@ -177,6 +175,8 @@ export class AppContainer extends React.Component {
             }).catch(() => {
                 reject();
             });
+        }).catch((e) => {
+            console.error(e);
         })
     };
 
